@@ -14,5 +14,5 @@ myEmitter.on("log", (message) => logEvents(message));
 // setTimeout added just to make the emission more observable... cool, right? lol
 setTimeout(() => {
   // emit log event
-  myEmitter.emit("log", "Log event emitted");
+  myEmitter.emit("log", "**Log event emitted**");
 }, 3000);
