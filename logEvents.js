@@ -1,4 +1,4 @@
-const nanoid = require("nanoid");
+const { v4: uuid } = require("uuid");
 const { formatRelative, subDays } = require("date-fns");
 
 const fs = require("fs");
@@ -7,7 +7,7 @@ const path = require("path");
 
 const logEvents = async (message) => {
   const dateTime = `${formatRelative(subDays(new Date(), 3), new Date())}`;
-  const logItem = `${dateTime}\t${nanoid()}\t${message}\n`;
+  const logItem = `${dateTime}\t${uuid()}\t${message}\n`;
   console.log(logItem);
   try {
     if (!fs.existsSync(path.join(__dirname, "logs"))) {
